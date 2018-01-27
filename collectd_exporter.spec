@@ -17,10 +17,13 @@ collectd's network plugin and metrics in JSON format via HTTP POST
 as sent by collectd's write_http plugin, and
 transforms and exposes them for consumption by Prometheus.
 
+%prep
+%setup -n %{name}-%{version}.linux-amd64
+
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p %{buildroot}/%{_bindir}
-%{__install} -m 755 %{SOURCE0} %{buildroot}/%{_bindir}/%{name}
+%{__install} -m 0755 -d %{buildroot}%{_bindir}
+%{__install} -m 0755 collectd_exporter %{buildroot}/%{_bindir}/%{name}
 
 %files
 %{_bindir}/%{name}
