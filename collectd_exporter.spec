@@ -33,3 +33,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %{_bindir}/%{name}
 /etc/init.d/collectd_exporter
+/etc/collectd_exporter.conf
