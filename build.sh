@@ -12,5 +12,6 @@ done
 
 rm -rf ~/rpmbuild/
 mkdir -p ~/rpmbuild/{RPMS,SRPMS,BUILD,SOURCES,SPECS}
+cp collectd_exporter.init ~/rpmbuild/SOURCES
 spectool -g -R collectd_exporter.spec
 rpmbuild -bb collectd_exporter.spec
