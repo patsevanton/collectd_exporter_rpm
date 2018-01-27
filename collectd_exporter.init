@@ -8,6 +8,12 @@
 # Load functions from library
 . /etc/init.d/functions
 
+# Source networking configuration.
+. /etc/collectd_exporter.conf
+
+# Check that networking is up.
+[ -z "$COLLECTD_LISTEN_ADDRESS" ] && echo "COLLECTD_LISTEN_ADDRESS not configured" && exit 0
+
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
 
 # Name of the application

@@ -10,6 +10,7 @@ URL:     https://github.com/prometheus/collectd_exporter
 License: ASL 2.0
 Source0: https://github.com/prometheus/collectd_exporter/releases/download/v%{version}/%{name}-%{version}.linux-amd64.tar.gz
 Source1: collectd_exporter.init
+Source2: collectd_exporter.conf
 
 %description
 An exporter for collectd.
@@ -27,6 +28,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__install} -m 0755 collectd_exporter %{buildroot}/%{_bindir}/%{name}
 %{__install} -m 0755 -d %{buildroot}/etc/init.d/
 %{__install} -m 0755 %{SOURCE1} %{buildroot}/etc/init.d/collectd_exporter
+%{__install} -m 0644 %{SOURCE2} %{buildroot}/etc/collectd_exporter.conf
 
 %files
 %{_bindir}/%{name}
