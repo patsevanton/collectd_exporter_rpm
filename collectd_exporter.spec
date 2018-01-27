@@ -8,7 +8,7 @@ Summary: A server that accepts collectd stats via HTTP POST and exports them via
 Group:   Development Tools
 URL:     https://github.com/prometheus/collectd_exporter
 License: ASL 2.0
-Source0: https://github.com/prometheus/collectd_exporter/releases/download/v${version}/%{name}-${version}.linux-amd64.tar.gz
+Source0: https://github.com/prometheus/collectd_exporter/releases/download/v%{version}/%{name}-%{version}.linux-amd64.tar.gz
 
 %description
 An exporter for collectd.
